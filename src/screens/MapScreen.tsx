@@ -11,6 +11,8 @@ const styles = StyleSheet.create({
     position: 'absolute',
     right: 0,
     bottom: 0,
+    // Render this double the size because OSM doesn't give 2x tiles
+    // (looks low-res without this scaling)
     height: '200%',
     width: '200%',
     top: '-50%',
@@ -39,14 +41,14 @@ function MapScreen() {
         <Tab.Navigator
           tabBarOptions={{
             style: {
-              backgroundColor: '#ED6826'
+              backgroundColor: '#E87D48',
             },
             indicatorStyle: {
-              backgroundColor: '#26ABED',
+              backgroundColor: '#E8236B',
             },
             labelStyle: {
-              color: '#fff'
-            }
+              color: '#fff',
+            },
           }}
         >
           <Tab.Screen name="Events" component={EventsScreen} />

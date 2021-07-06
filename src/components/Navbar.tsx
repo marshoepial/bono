@@ -21,7 +21,7 @@ const navbarStyles = StyleSheet.create({
 
 const Navbar = () => (
   <View style={navbarStyles.navView}>
-    <Text style={navbarStyles.headerText}>{`Breadster ${__DEV__ ? '[dev]' : ''}`}</Text>
+    <Text style={navbarStyles.headerText}>{`bono ${__DEV__ ? '[dev]' : ''}`}</Text>
   </View>
 );
 

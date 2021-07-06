@@ -1,4 +1,4 @@
-package com.breadster.generated;
+package net.bono.bono.generated;
 
 import java.util.Arrays;
 import java.util.List;

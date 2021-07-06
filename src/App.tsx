@@ -32,21 +32,23 @@ const App = () => {
   return (
     <DripsyProvider theme={mainTheme}>
       <SafeAreaProvider>
-        <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} backgroundColor="#ED6826" />
+        <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} backgroundColor="#E87D48" />
         {/* <Navbar /> */}
         <NavigationContainer>
-          <Stack.Navigator>
+          <Stack.Navigator screenOptions={{
+            headerStyle: {
+              backgroundColor: '#E87D48', // todo, figure out how to fit this to themeui
+            },
+            headerTitleStyle: {
+              color: '#ffffff',
+            },
+            headerTitleAlign: 'center',
+          }}>
             <Stack.Screen
               name="Map"
               component={MapScreen}
               options={{
-                title: 'Breadster',
-                headerStyle: {
-                  backgroundColor: '#ED6826', // todo, figure out how to fit this to themeui
-                },
-                headerTitleStyle: {
-                  color: '#ffffff',
-                },
+                title: 'bono',
               }}
             />
           </Stack.Navigator>
