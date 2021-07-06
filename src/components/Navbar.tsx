@@ -19,8 +19,10 @@ const navbarStyles = StyleSheet.create({
   },
 });
 
-export const Navbar = () => (
+const Navbar = () => (
   <View style={navbarStyles.navView}>
     <Text style={navbarStyles.headerText}>{`Breadster ${__DEV__ ? '[dev]' : ''}`}</Text>
   </View>
 );
+
+export { Navbar as default };
