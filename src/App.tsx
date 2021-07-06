@@ -32,7 +32,7 @@ const App = () => {
   return (
     <DripsyProvider theme={mainTheme}>
       <SafeAreaProvider>
-        <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} backgroundColor="#fc7537" />
+        <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} backgroundColor="#ED6826" />
         {/* <Navbar /> */}
         <NavigationContainer>
           <Stack.Navigator>
