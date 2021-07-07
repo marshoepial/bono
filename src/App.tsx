@@ -43,7 +43,8 @@ const App = () => {
               color: '#ffffff',
             },
             headerTitleAlign: 'center',
-          }}>
+          }}
+          >
             <Stack.Screen
               name="Map"
               component={MapScreen}

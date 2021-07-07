@@ -60,3 +60,9 @@ buck-out/
 
 # OOM crash reports
 *.hprof
+
+# vscode
+.vscode/
+
+# dotenv
+.env

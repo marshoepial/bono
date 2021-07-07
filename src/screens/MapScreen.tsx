@@ -1,9 +1,12 @@
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import React from 'react';
 import {
+  PermissionsAndroid,
+  Platform,
   StyleSheet, View,
 } from 'react-native';
-import MapView from 'react-native-maps-osmdroid';
+import Config from 'react-native-config';
+import MapView, { UrlTile } from 'react-native-maps';
 import EventsScreen from './EventsScreen';
 
 const styles = StyleSheet.create({
@@ -11,17 +14,14 @@ const styles = StyleSheet.create({
     position: 'absolute',
     right: 0,
     bottom: 0,
-    // Render this double the size because OSM doesn't give 2x tiles
-    // (looks low-res without this scaling)
-    height: '200%',
-    width: '200%',
-    top: '-50%',
-    left: '-50%',
-    transform: [{ scale: 0.5 }],
+    top: 0,
+    left: 0,
   },
 });
 
 const Tab = createMaterialTopTabNavigator();
+
+const template = `https://api.maptiler.com/maps/streets/{z}/{x}/{y}@2x.png?key=${Config.MAPTILER_API}`;
 
 function MapScreen() {
   return (
@@ -35,7 +35,25 @@ function MapScreen() {
             latitudeDelta: 0.0922,
             longitudeDelta: 0.0421,
           }}
-        />
+          provider={null}
+          mapType={Platform.OS === 'android' ? 'none' : 'standard'}
+          showsUserLocation
+          showsMyLocationButton={false}
+          onMapReady={() => {
+            if (Platform.OS === 'android') {
+              PermissionsAndroid.request(
+                PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+              );
+            }
+          }}
+        >
+          <UrlTile
+            urlTemplate={template}
+            flipY={false}
+            maximumZ={50}
+            shouldReplaceMapContent
+          />
+        </MapView>
       </View>
       <View style={{ flex: 1.2 }}>
         <Tab.Navigator
