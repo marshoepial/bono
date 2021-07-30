@@ -22,4 +22,4 @@ At the time of writing bono is in initial stages of development. If you want to 
  - Fill out the blanks in `.env_sample`, remove the comments and rename it to `.env`
  - In one terminal, run `yarn start` to run the metro development server
  - In another terminal, run `yarn android`<sup>[1]</sup> or `yarn ios` to build and upload to the respective devices.  
-<sub>1. To run on Android a Google Maps Android SDK key is required. This app doesn't charge anything to the key as it uses OpenStreetMaps for tile data.</sub>
+<sub>1. To run on Android a Google Maps Android SDK key is required. This app doesn't charge anything to the key as it uses MapTiler for tile data.</sub>
